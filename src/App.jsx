@@ -208,9 +208,11 @@ export default function App() {
             className="relative hidden lg:block"
           >
             <div className="relative z-10 aspect-[4/5] bg-stone-200 rounded-[4rem] overflow-hidden shadow-2xl border-[16px] border-white ring-1 ring-stone-100">
-              <div className="w-full h-full bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center text-stone-400 italic">
-                [Image of 3D Printing Jewelry Process]
-              </div>
+              <img
+                src="https://k0807wu.zeabur.app/i/42b5fcd9-d236-44d0-b2fd-f83c93772495.jpg"
+                alt="3D 列印金工流程"
+                className="w-full h-full object-cover"
+              />
             </div>
             <motion.div
               animate={{ y: [0, -20, 0] }}
