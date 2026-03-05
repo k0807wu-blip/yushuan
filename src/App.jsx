@@ -39,19 +39,29 @@ const portfolioItems = [
     title: "寄「夢」於「藍」",
     type: "銅胎掐絲琺瑯",
     meaning: "指引她們乘風破浪、踏上歸途的微光。",
+    desc: "以人魚尾鰭為「我」之意涵，象徵幻想、希望與生命力。浪花波動的優雅線條，如同跨越海洋而來的生命軌跡，承載著新住民遠渡而來的故事與文化記憶。",
     img: "https://k0807wu.zeabur.app/i/dab82ca5-0c85-423b-b822-c90fa05bc379.jpg"
   },
   {
     title: "花聲什麼事?",
     type: "純銀與琺瑯",
     meaning: "無論身在何處，思念終將如花香飄蕩。",
+    desc: "以花朵為整套飾品創作核心，花朵象徵生命的綻放與成長，如同新住民在異地落地生根，透過不同文化的交流與融合，展現多元文化共存的美麗與生命力。",
     img: "https://k0807wu.zeabur.app/i/82edd479-5508-46f3-a712-12329e0bb8b0.jpg"
   },
   {
     title: "Claire.",
     type: "蠟雕純銀飾",
     meaning: "守護她們心底最渴望回家的聲音。",
+    desc: "戒指以多朵盛開的小花組成捧花造型，每一朵花象徵一段回憶、一句承諾與一個珍貴瞬間；婚紗意象的綴飾與中心粉色寶石象徵愛的核心，守護著永不消逝的情感。作品同時呼應新住民跨越地域與文化所建立的家庭連結，在新的土地上綻放出多元而溫暖的生命故事。",
     img: "https://k0807wu.zeabur.app/i/35809318-c3ee-49f6-8f30-738de4188089.jpg"
+  },
+  {
+    title: "FLORAE WINGS",
+    type: "純銀與琺瑯",
+    meaning: "自然的瞬息與永恆的力量。",
+    desc: "以純銀為媒介、琺瑯為點綴，將花朵細膩的律動、露水的剔透與翩翩彩蝶定格，捕捉世間萬物稍縱即逝的美好瞬間，留下恰到好處的自然之美。作品連結新住民跨越地域與文化的生命旅程，如同花與蝶在不同環境中相遇、共生，在新的土地上綻放出多元永續的生命力量。",
+    img: "https://k0807wu.zeabur.app/i/4d503172-2698-46cb-bdef-75bd28c93d3a.jpg"
   }
 ];
 
@@ -291,11 +301,11 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex gap-8 overflow-x-auto pb-12 snap-x no-scrollbar">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {portfolioItems.map((item, idx) => (
               <motion.div
                 key={idx}
-                className="min-w-[320px] md:min-w-[420px] snap-center bg-white rounded-[3rem] overflow-hidden shadow-xl shadow-stone-100 border border-stone-50 flex flex-col group"
+                className="bg-white rounded-[3rem] overflow-hidden shadow-xl shadow-stone-100 border border-stone-50 flex flex-col group"
               >
                 <div className="aspect-square relative flex items-center justify-center bg-stone-100">
                   <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
@@ -305,7 +315,10 @@ export default function App() {
                 </div>
                 <div className="p-10 flex-1 flex flex-col">
                   <h3 className="text-2xl font-black text-stone-900 mb-2">{item.title}</h3>
-                  <div className="text-orange-500 text-sm font-bold italic">「{item.meaning}」</div>
+                  <div className="text-orange-500 text-sm font-bold italic mb-4">「{item.meaning}」</div>
+                  {item.desc && (
+                    <p className="text-stone-600 text-sm leading-relaxed">{item.desc}</p>
+                  )}
                 </div>
               </motion.div>
             ))}
